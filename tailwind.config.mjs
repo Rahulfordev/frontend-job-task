@@ -23,6 +23,10 @@ export default {
         grayMedium: "#D9D9D9",
         grayDark: "#4A4A52",
       },
+      fontFamily: {
+        questrial: ['"Questrial"', "sans-serif"],
+        rubik: ['"Rubik"', "sans-serif"],
+      },
     },
   },
   plugins: [],

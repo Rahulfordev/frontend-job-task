@@ -4,14 +4,14 @@ const Button = ({
   children,
   type = "button",
   onClick,
-  variant = "primary",
+  variant,
   disabled = false,
   className = "",
   ...props
 }) => {
   const baseStyles = "";
   const variants = {
-    primary: "",
+    primary: "px-8 py-4 text-white text-lg font-semibold bg-orange rounded-lg",
     secondary: "",
     danger: "",
   };

@@ -1,4 +1,3 @@
-import { Questrial } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 import leat_right from "../../../../public/images/leaf_hero_right.png";
@@ -10,11 +9,7 @@ import arrow_right from "../../../../public/images/arrow_right.png";
 import orange_line from "../../../../public/images/orange_line.png";
 import apple_logo from "../../../../public/images/apple_logo.png";
 import google_play_store_logo from "../../../../public/images/google_play_store_logo.png";
-
-const questrial = Questrial({
-  subsets: ["latin"],
-  weight: "400",
-});
+import Button from "@/components/common/button/Button";
 
 const HeroSection = () => {
   return (
@@ -29,14 +24,14 @@ const HeroSection = () => {
             Fresh Fruits and Vegetables
           </h1>
           <p
-            className={`mt-4 text-xs max-w-[450px] sm:text-sm font-normal text-secondary ${questrial.className}`}
+            className={`mt-4 text-xs max-w-[450px] sm:text-sm font-normal text-secondary font-questrial`}
           >
             At Fresh Harvest, we are passionate about providing you with the
             freshest and most flavorful fruits and vegetables.
           </p>
-          <button className="px-8 py-4 mt-8 rounded-lg bg-orange text-white bg-orange-500 font-semibold text-lg ">
+          <Button variant="primary" className="mt-8">
             Shop Now
-          </button>
+          </Button>
           <div className="absolute left-28 -bottom-16">
             <Image src={arrow_right} alt="arrow_right" />
           </div>
@@ -68,7 +63,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="mt-56">
-          <p className={`text-sm mb-3 text-secondary ${questrial.className}`}>
+          <p className={`text-sm mb-3 text-secondary font-questrial`}>
             Download App:
           </p>
           <div className="flex items-center gap-x-4">

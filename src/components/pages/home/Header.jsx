@@ -9,13 +9,11 @@ const Header = () => {
         style={{ flex: "0 0 65%" }}
       ></div>
 
-      {/* Right Background Image */}
       <div
         className="bg-[url('/images/hero_image_right_side.png')] bg-right bg-no-repeat bg-cover"
         style={{ flex: "0 0 35%" }}
       ></div>
 
-      {/* Navbar and Hero Section */}
       <div className="absolute inset-0 z-10">
         <Navbar />
         <HeroSection />
