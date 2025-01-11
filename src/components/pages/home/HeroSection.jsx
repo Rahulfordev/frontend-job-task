@@ -10,6 +10,7 @@ import orange_line from "../../../../public/images/orange_line.png";
 import apple_logo from "../../../../public/images/apple_logo.png";
 import google_play_store_logo from "../../../../public/images/google_play_store_logo.png";
 import Button from "@/components/common/button/Button";
+import Caption from "@/components/common/heading/Caption";
 
 const HeroSection = () => {
   return (
@@ -17,9 +18,8 @@ const HeroSection = () => {
       {/* Left Content */}
       <div className="text-white pt-20 relative">
         <div className="relative">
-          <p className="mb-4 text-xl font-medium text-accent px-3 py-1 bg-[#749B3F1A] rounded-lg w-fit">
-            Welcome to Fresh Harvest
-          </p>
+          <Caption className="mb-4">Welcome to Fresh Harvest</Caption>
+
           <h1 className="text-5xl md:text-[70px] max-w-[660px] font-medium text-primary">
             Fresh Fruits and Vegetables
           </h1>

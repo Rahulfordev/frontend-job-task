@@ -4,21 +4,57 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
-import { FaHeart } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import logo from "../../../public/images/logo.png";
 import facebook_icon from "../../../public/images/facebook_icon.png";
 import google_icon from "../../../public/images/google_icon.png";
 import Button from "../common/button/Button";
 import Modal from "../common/modal/Modal";
+import { toast } from "react-toastify";
+import { loginUser } from "@/api/services/userService";
+import Cookies from "js-cookie";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const pathname = usePathname();
+  const [loginForm, setLoginForm] = useState({ email: "", password: "" });
+  const [rememberMe, setRememberMe] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const toggleLoginModal = () => {
     setIsLoginModalOpen(!isLoginModalOpen);
+    setLoginForm({ email: "", password: "" });
+  };
+
+  const handlePasswordToggle = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setLoginForm({ ...loginForm, [name]: value });
+  };
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    const response = await loginUser(loginForm);
+    
+    if (!response.success) {
+      toast.error(response.message, { autoClose: 2000 });
+      return;
+    }
+
+    toast.success(response.message, { autoClose: 2000 });
+    setIsLoginModalOpen(false);
+    const { token } = response.data;
+    setLoginForm({ email: "", password: "" });
+    if (rememberMe) {
+      Cookies.set("token", token, { expires: 30 });
+    } else {
+      Cookies.set("token", token);
+    }
   };
 
   return (
@@ -133,7 +169,7 @@ const Navbar = () => {
       {/* Login Modal */}
       {isLoginModalOpen && (
         <Modal onClose={toggleLoginModal} title="Login">
-          <form className="font-rubik">
+          <form className="font-rubik" onSubmit={handleLoginSubmit}>
             <div className="mb-4">
               <label
                 htmlFor="email"
@@ -142,9 +178,11 @@ const Navbar = () => {
                 Email
               </label>
               <input
-                type="email"
                 id="email"
+                type="email"
                 name="email"
+                value={loginForm.email}
+                onChange={handleInputChange}
                 required
                 className="w-full px-4 py-2 border border-grayMedium rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="Enter your email"
@@ -160,9 +198,11 @@ const Navbar = () => {
               </label>
               <div className="relative">
                 <input
-                  type="password"
                   id="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
+                  value={loginForm.password}
+                  onChange={handleInputChange}
                   required
                   className="w-full px-4 py-2 border border-grayMedium rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
                   placeholder="Enter your password"
@@ -170,8 +210,13 @@ const Navbar = () => {
                 <button
                   type="button"
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                  onClick={handlePasswordToggle}
                 >
-                  👁️
+                  {showPassword ? (
+                    <FaEyeSlash className="text-xl" />
+                  ) : (
+                    <FaEye className="text-xl" />
+                  )}
                 </button>
               </div>
             </div>
@@ -179,7 +224,9 @@ const Navbar = () => {
             <div className="flex items-center justify-between mb-6">
               <label className="flex items-center text-xs font-medium font-rubik text-secondary">
                 <input
-                  type="checkbox"
+                  type={"checkbox"}
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
                   className="appearance-none w-5 h-5 border-2 border-orange-500 rounded-md cursor-pointer checked:bg-orange-500 checked:border-orange-500 checked:text-white flex items-center justify-center"
                 />
                 Remember me

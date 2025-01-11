@@ -16,14 +16,18 @@ export const apiCall = async (endpoint, method = "GET", body = null) => {
     const url = `${API_BASE_URL}${endpoint}`;
     const response = await fetch(url, options);
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || "Something went wrong");
+      return {
+        success: false,
+        message: data.message || "Something went wrong",
+      };
     }
 
-    return await response.json();
+    return { success: true, ...data };
   } catch (error) {
-    console.error(error.message);
-    throw error;
+    console.error("API call error:", error.message);
+    return { success: false, message: "Network error. Please try again." };
   }
 };

@@ -1,9 +1,6 @@
-import { Rubik } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
-
-const rubik = Rubik({
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${rubik.className}`}>{children}</body>
+      <body className={`font-rubik`}>
+        {children} <ToastContainer />
+      </body>
     </html>
   );
 }
