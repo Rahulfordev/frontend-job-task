@@ -4,6 +4,7 @@ import AboutUs from "@/components/pages/home/AboutUs";
 import Header from "@/components/pages/home/Header";
 import Products from "@/components/pages/home/Products";
 import SeasonalFruitBundle from "@/components/pages/home/SeasonalFruitBundle";
+import TestimonialSection from "@/components/pages/home/TestimonialSection";
 
 async function Home() {
   const products = await getProducts();
@@ -15,6 +16,7 @@ async function Home() {
       <Products products={products} categories={categories} />
       <AboutUs />
       <SeasonalFruitBundle />
+      <TestimonialSection />
     </div>
   );
 }
