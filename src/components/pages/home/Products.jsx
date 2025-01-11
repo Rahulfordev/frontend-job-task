@@ -66,7 +66,7 @@ export default function Products({ products, categories }) {
           {filteredProducts?.map((product) => (
             <div
               key={product.id}
-              className="bg-white px-[6px] sm:px-3 pb-2 sm:pb-[20px] pt-[6px] sm:pt-[10px] border border-red-700 text-black rounded-[20px] shadow-lg overflow-hidden"
+              className="bg-white px-[6px] sm:px-3 pb-2 sm:pb-[20px] pt-[6px] sm:pt-[10px] text-black rounded-[20px] shadow-lg overflow-hidden"
             >
               <div className="bg-grayBackground rounded-2xl w-[149px] sm:w-[258px] h-[119px] sm:h-[206px] flex items-center justify-center overflow-hidden">
                 {product.images[0] && (

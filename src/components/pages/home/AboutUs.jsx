@@ -9,7 +9,7 @@ import Title from "@/components/common/heading/Title";
 import Description from "@/components/common/heading/Description";
 import leat_bottom from "../../../../public/images/left_hero_bottom.png";
 
-const AboutUs = () => {
+const AboutUs = () => { 
   return (
     <div className="my-[80px] px-4 lg:px-0">
       <section className="relative max-w-[1200px] mx-auto  justify-between flex flex-col lg:flex-row items-center">
@@ -57,7 +57,7 @@ const AboutUs = () => {
         </div>
 
         {/* Right Section */}
-        <div className="">
+        <div className="mt-6 lg:mt-0">
           <Caption className="mb-4">About us</Caption>
           <Title className="mb-4 lg:whitespace-nowrap">
             About Fresh Harvest
