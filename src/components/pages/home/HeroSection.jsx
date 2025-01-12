@@ -6,6 +6,7 @@ import girl_with_vegetables from "../../../../public/images/girl-with-vegetables
 import arrow_right from "../../../../public/images/arrow_right.png";
 import apple_logo from "../../../../public/images/apple_logo.png";
 import google_play_store_logo from "../../../../public/images/google_play_store_logo.png";
+import orange_line from "../../../../public/images/orange_line.png";
 import Button from "@/components/common/button/Button";
 import Caption from "@/components/common/heading/Caption";
 
@@ -88,6 +89,11 @@ const HeroSection = () => {
 
       {/* Girl with Vegetables Image */}
       <div className="absolute bottom-0 -right-60 md:-right-40 lg:right-14 z-10 max-w-[600px]">
+        <div className="relative">
+          <div className="absolute top-64 z-40">
+            <Image src={orange_line} alt="orange_line" />
+          </div>
+        </div>
         <Image
           src={girl_with_vegetables}
           className="object-contain"

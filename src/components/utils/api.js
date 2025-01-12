@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "@/api/config/apiConfig";
+const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const apiCall = async (endpoint, method = "GET", body = null) => {
   try {
@@ -13,7 +13,7 @@ export const apiCall = async (endpoint, method = "GET", body = null) => {
       options.body = JSON.stringify(body);
     }
 
-    const url = `${API_BASE_URL}${endpoint}`;
+    const url = `${baseUrl}${endpoint}`;
     const response = await fetch(url, options);
 
     const data = await response.json();

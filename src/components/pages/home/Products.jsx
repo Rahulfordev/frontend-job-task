@@ -72,7 +72,7 @@ export default function Products({ products, categories }) {
 
         {/* See All Products Button */}
         <div className="text-center mt-6 sm:mt-8">
-          <button className="px-8 py-3 text-orange text-sm sm:text-lg border border-orange rounded-lg">
+          <button className="px-8 py-3 text-orange text-sm sm:text-lg border border-orange rounded-lg hover:bg-orange hover:text-white transition duration-300">
             See All Products
           </button>
         </div>

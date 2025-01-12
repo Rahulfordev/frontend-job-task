@@ -4,7 +4,6 @@ import HeroSection from "./HeroSection";
 import leat_right from "../../../../public/images/leaf_hero_right.png";
 import leat_left from "../../../../public/images/leaf_hero_left.png";
 import leat_bottom from "../../../../public/images/left_hero_bottom.png";
-import orange_line from "../../../../public/images/orange_line.png";
 import Image from "next/image";
 
 const Header = () => {
@@ -26,9 +25,6 @@ const Header = () => {
         <Image src={leat_bottom} alt="Leaf" />
       </div>
 
-      <div className="absolute">
-        <Image src={orange_line} alt="orange_line" />
-      </div>
       <div className="hidden sm:block absolute top-0 sm:top-10 sm:left-0">
         <Image src={leat_left} className="w-10 sm:w-full" alt="Leaf" />
       </div>

@@ -125,7 +125,7 @@ export default function ProductDetails({ findCategory, product }) {
               <button className="bg-grayBackground text-secondary flex items-center gap-x-2 justify-center w-full sm:w-auto text-lg font-semibold py-4 px-6 rounded-lg">
                 <FaHeart className="text-grayMedium" /> Save as favorite
               </button>
-              <button className="bg-orange text-white flex items-center gap-x-2 justify-center w-full sm:w-auto text-lg font-semibold py-4 px-6 rounded-lg">
+              <button className="bg-orange text-white flex items-center border border-orange gap-x-2 justify-center w-full sm:w-auto text-lg font-semibold py-4 px-6 rounded-lg hover:bg-white hover:text-orange hover:border hover:border-grayMedium transition duration-300">
                 <AiOutlineShoppingCart className="text-white" /> Add to cart
               </button>
             </div>

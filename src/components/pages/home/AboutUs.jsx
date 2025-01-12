@@ -9,7 +9,7 @@ import Title from "@/components/common/heading/Title";
 import Description from "@/components/common/heading/Description";
 import leat_bottom from "../../../../public/images/left_hero_bottom.png";
 
-const AboutUs = () => { 
+const AboutUs = () => {
   return (
     <div className="my-[80px] px-4 lg:px-0">
       <section className="relative max-w-[1200px] mx-auto  justify-between flex flex-col lg:flex-row items-center">
@@ -71,7 +71,7 @@ const AboutUs = () => {
             revolutionize your grocery shopping experience.
           </Description>
 
-          <button className="px-8 py-4 text-sm text-orange border border-orange rounded-lg sm:text-lg font-medium">
+          <button className="px-8 py-4 text-sm text-orange border border-orange rounded-lg sm:text-lg font-medium hover:bg-orange hover:text-white transition duration-300">
             Read More
           </button>
         </div>

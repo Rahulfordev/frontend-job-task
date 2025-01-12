@@ -99,16 +99,28 @@ const Navbar = () => {
                 Cart
               </span>
             </Button>
-            <button
-              onClick={toggleLoginModal}
-              className={`${
-                pathname === "/"
-                  ? "text-white border-white"
-                  : "text-primary border-primary"
-              } font-rubik text-sm font-semibold px-6 py-3 border  rounded`}
-            >
-              Sign in
-            </button>
+            <div className="flex items-center gap-x-2">
+              <button
+                onClick={toggleLoginModal}
+                className={`${
+                  pathname === "/"
+                    ? "text-white border-white"
+                    : "text-primary border-primary"
+                } font-rubik text-sm font-semibold px-6 py-3 border  rounded`}
+              >
+                Sign in
+              </button>
+              <button
+                onClick={toggleRegisterModal}
+                className={`${
+                  pathname === "/"
+                    ? "text-white border-white"
+                    : "text-primary border-primary"
+                } font-rubik text-sm font-semibold px-6 py-3 border  rounded`}
+              >
+                Sign up
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -119,12 +131,39 @@ const Navbar = () => {
                 3
               </span>
             </div>
-            <div className="gap-[10px] lg:hidden flex relative">
-              <CiMenuFries
-                className={`text-[28px] text-white cursor-pointer`}
-                onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-              />
-            </div>
+
+            <button
+              aria-expanded={mobileSidebarOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+              className="lg:hidden relative flex items-center justify-center bg-skyBlue rounded-[10px] p-[10px] w-12 h-12 text-white cursor-pointer"
+            >
+              <div
+                className={`relative flex items-center justify-center w-6 h-6 transform transition-transform duration-300 ${
+                  mobileSidebarOpen ? "rotate-90" : "rotate-0"
+                }`}
+              >
+                <span
+                  className={`absolute block w-6 h-0.5 bg-white transition-all duration-300 ${
+                    mobileSidebarOpen
+                      ? "translate-y-0 rotate-45"
+                      : "-translate-y-2"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute block w-6 h-0.5 bg-white transition-all duration-300 ${
+                    mobileSidebarOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute block w-6 h-0.5 bg-white transition-all duration-300 ${
+                    mobileSidebarOpen
+                      ? "translate-y-0 -rotate-45"
+                      : "translate-y-2"
+                  }`}
+                ></span>
+              </div>
+            </button>
           </div>
         </nav>
 
@@ -137,7 +176,7 @@ const Navbar = () => {
           } lg:hidden bg-white shadow-md p-4 text-center absolute right-0 w-full rounded-md transition-all duration-300`}
         >
           <ul className="items-center gap-[20px] text-[1rem] text-black flex flex-col">
-            {["Home", "About Us", "Shop", "Blog"].map((item, index) => {
+            {["Home", "Shop", "About Us", "Blog"].map((item, index) => {
               const path =
                 item === "Home"
                   ? "/"
@@ -158,6 +197,18 @@ const Navbar = () => {
               );
             })}
           </ul>
+          <button
+            onClick={toggleLoginModal}
+            className="mt-4 text-primary border-primary font-rubik text-sm font-semibold px-6 py-3 border rounded w-full"
+          >
+            Sign in
+          </button>
+          <button
+            onClick={toggleRegisterModal}
+            className="mt-4 text-primary border-primary font-rubik text-sm font-semibold px-6 py-3 border rounded w-full"
+          >
+            Sign up
+          </button>
         </aside>
       </div>
 
