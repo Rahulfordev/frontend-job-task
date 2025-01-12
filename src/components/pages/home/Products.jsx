@@ -36,7 +36,7 @@ export default function Products({ products, categories }) {
   };
 
   return (
-    <div className="text-white px-4 lg:pt-[130px] lg:mb-[80px] relative">
+    <div className="text-white px-4 pt-20 lg:pt-[130px] lg:mb-[80px] relative max-w-[1200px] mx-auto">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-center justify-center flex-col">
           <Caption className="mb-3 sm:mb-4">Our Products</Caption>
@@ -77,10 +77,10 @@ export default function Products({ products, categories }) {
           </button>
         </div>
       </div>
-      <div className="absolute top-36 left-24">
+      <div className="absolute top-12 sm:top-36 left-0 sm:left-24">
         <Image src={leat_bottom} alt="Leaf" />
       </div>
-      <div className="absolute top-28 right-24">
+      <div className="absolute top-12 sm:top-28 right-0 sm:right-24">
         <Image src={leat_bottom} alt="Leaf" />
       </div>
     </div>

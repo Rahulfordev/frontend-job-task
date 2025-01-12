@@ -36,7 +36,7 @@ const blogPosts = [
 
 export default function Blogs() {
   return (
-    <div className="px-4 lg:py-[130px] max-w-[1200px] mx-auto">
+    <div className="px-4 py-20 lg:py-[130px] max-w-[1200px] mx-auto">
       <div className="flex items-center justify-center flex-col pb-5 lg:pb-10">
         <Caption className="mb-3 sm:mb-4">Our Blog</Caption>
         <Title className="mb-3 text-center lg:text-left">

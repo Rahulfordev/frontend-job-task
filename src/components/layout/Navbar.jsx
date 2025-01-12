@@ -28,11 +28,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`font-questrial w-full  transition-all duration-300`}>
+    <div className={`font-questrial w-full z-50 transition-all duration-300`}>
       {/* Navigation */}
       <div className="">
         <nav
-          className={`flex items-center justify-between px-4 lg:px-[120px] py-5 max-w-[1440px] mx-auto`}
+          className={`flex items-center justify-between px-4 lg:px-[100px] py-5 max-w-[1440px] mx-auto`}
         >
           {/* Logo */}
           <Link href={"/"}>
@@ -121,7 +121,7 @@ const Navbar = () => {
             </div>
             <div className="gap-[10px] lg:hidden flex relative">
               <CiMenuFries
-                className={`text-[28px] text-grayDark cursor-pointer`}
+                className={`text-[28px] text-white cursor-pointer`}
                 onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
               />
             </div>
@@ -132,7 +132,7 @@ const Navbar = () => {
         <aside
           className={`${
             mobileSidebarOpen
-              ? "translate-x-0 opacity-100 z-20"
+              ? "translate-x-0 opacity-100 z-50"
               : "-translate-x-full opacity-0 z-[-1]"
           } lg:hidden bg-white shadow-md p-4 text-center absolute right-0 w-full rounded-md transition-all duration-300`}
         >

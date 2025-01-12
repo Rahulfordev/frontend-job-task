@@ -27,6 +27,16 @@ export default {
         questrial: ['"Questrial"', "sans-serif"],
         rubik: ['"Rubik"', "sans-serif"],
       },
+      
+      backgroundImage: {
+        "two-images": "url('image1.jpg'), url('image2.jpg')",
+      },
+      backgroundSize: {
+        "64-36": "64% 100%, 36% 100%",
+      },
+      backgroundPosition: {
+        "left-right": "left, right",
+      },
     },
   },
   plugins: [],

@@ -12,14 +12,14 @@ async function Home() {
   const categories = await getCategories();
 
   return (
-    <div>
+    <>
       <Header />
       <Products products={products} categories={categories} />
       <AboutUs />
       <SeasonalFruitBundle />
       <TestimonialSection />
       <Blogs />
-    </div>
+    </>
   );
 }
 

@@ -16,7 +16,7 @@ export default function TestimonialSection() {
   const paginationRef = useRef(null);
 
   return (
-    <div className="text-white px-4 py-16 lg:mb-[80px] relative">
+    <div className="text-white px-4 py-16 lg:mb-[80px] relative max-w-[1200px] mx-auto">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-center justify-center flex-col pb-5 lg:pb-12">
           <Caption className="mb-3 sm:mb-4">Testimonial</Caption>
