@@ -40,7 +40,7 @@ const Navbar = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     const response = await loginUser(loginForm);
-    
+
     if (!response.success) {
       toast.error(response.message, { autoClose: 2000 });
       return;
@@ -59,7 +59,6 @@ const Navbar = () => {
 
   return (
     <div className={`font-questrial w-full  transition-all duration-300`}>
-      {/* fixed top-0 left-0 z-50 */}
       {/* Navigation */}
       <div className="">
         <nav
@@ -96,21 +95,43 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center gap-x-4">
             <Button className="flex items-center gap-x-2">
-              <FaHeart className="text-white" />
-              <span className="text-white">Favorites</span>
+              <FaHeart
+                className={`${pathname === "/" ? "text-white" : "text-accent"}`}
+              />
+              <span
+                className={`${
+                  pathname === "/" ? "text-white" : "text-primary"
+                }`}
+              >
+                Favorites
+              </span>
             </Button>
             <Button className="flex items-center gap-x-2">
               <div className="relative">
-                <MdOutlineShoppingCart className="text-white text-lg" />
+                <MdOutlineShoppingCart
+                  className={`text-lg ${
+                    pathname === "/" ? "text-white" : "text-accent"
+                  }`}
+                />
                 <span className="absolute border-[2px] border-accent -top-[11px] -right-[9px] text-xs font-normal text-[#FFEFEB] rounded-full h-5 w-5 bg-[#EE4536] flex items-center justify-center leading-none">
                   3
                 </span>
               </div>
-              <span className="text-white">Cart</span>
+              <span
+                className={`${
+                  pathname === "/" ? "text-white" : "text-primary"
+                }`}
+              >
+                Cart
+              </span>
             </Button>
             <button
               onClick={toggleLoginModal}
-              className={`font-rubik text-sm font-semibold px-6 py-3 border border-white text-white rounded`}
+              className={`${
+                pathname === "/"
+                  ? "text-white border-white"
+                  : "text-primary border-primary"
+              } font-rubik text-sm font-semibold px-6 py-3 border  rounded`}
             >
               Sign in
             </button>
