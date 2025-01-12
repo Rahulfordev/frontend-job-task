@@ -73,14 +73,39 @@ export default function TestimonialSection() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex flex-col lg:flex-row items-center gap-8 justify-center relative">
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 relative">
                 <Image src={customerImage} alt="Customer" />
+                <Image
+                  src={orange_line}
+                  className="absolute  rotate-90 top-0 left-64 lg:left-64"
+                  alt="orange_line"
+                />
               </div>
-              <Image
-                src={orange_line}
-                className="absolute rotate-90 top-0 left-[400px]"
-                alt="orange_line"
-              />
+              <div className="bg-grayBackground text-black p-6 rounded-3xl max-w-[630px]">
+                <p className="text-lg font-questrial text-secondary">
+                  "I absolutely love Fresh Harvest! The quality of their produce
+                  is outstanding. It's always fresh, flavorful, and delicious.
+                  The convenience of ordering online and having it delivered to
+                  my doorstep saves me so much time. Fresh Harvest has become my
+                  go-to for all my fruit and vegetable needs."
+                </p>
+                <p className="mt-7 font-lg text-primary font-medium">
+                  Jane Doe -{" "}
+                  <span className="font-questrial ">Professional Chef</span>
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex flex-col lg:flex-row items-center gap-8 justify-center relative">
+              <div className="flex-shrink-0 relative">
+                <Image src={customerImage} alt="Customer" />
+                <Image
+                  src={orange_line}
+                  className="absolute  rotate-90 top-0 left-64 lg:left-64"
+                  alt="orange_line"
+                />
+              </div>
               <div className="bg-grayBackground text-black p-6 rounded-3xl max-w-[630px]">
                 <p className="text-lg font-questrial text-secondary">
                   "I absolutely love Fresh Harvest! The quality of their produce

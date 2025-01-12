@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="py-8 bg-grayBackground">
       <div className="max-w-[1200px] mx-auto px-4 lg:px-0">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6 ">
-          <div className="col-span-2 :col-span-3 border">
+          <div className="col-span-2 :col-span-3">
             <Image
               src={logo}
               alt={"LogoWhite"}
@@ -105,7 +105,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-span-2 :col-span-3 border">
+          <div className="col-span-2 :col-span-3">
             <div className="">
               <p className={`text-xs mb-3 text-primary font-medium`}>
                 Download App:
